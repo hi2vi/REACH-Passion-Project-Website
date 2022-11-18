@@ -3,11 +3,13 @@
 }
 
 .goBackToMainPage {
+    position:absolute;
     top:0px;
     left:0px;
 }
 
 #picture-of-myself {
-    left:500px;
+    position:relative;
+    left:45%;
     top:0px;
 }
