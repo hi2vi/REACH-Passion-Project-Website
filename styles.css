@@ -2,7 +2,11 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-#picture {
-    top:50px;
-    left:auto;
+.goBackToMainPage {
+    top:0px;
+    left:0px;
+}
+
+#picture-of-myself {
+    justify-items: center;
 }
