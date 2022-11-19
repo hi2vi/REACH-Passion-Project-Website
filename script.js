@@ -1,3 +1,7 @@
 function goBackToMainPage() {
-    window.location = "https://shauryacomputers.tech"
+    goToLink("https://shauryacomputers.tech");
+}
+
+function goToLink(link) {
+    window.location = link;
 }
