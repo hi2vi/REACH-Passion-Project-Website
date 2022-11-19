@@ -2,7 +2,7 @@ div, p, pre {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-button {
+.goBackToMainPage {
     position:absolute;
     top:0px;
     left:0px;
@@ -20,7 +20,7 @@ button {
     top:0px;
 }
 
-.btn {
+button {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
     border: 0px solid white;
