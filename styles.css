@@ -28,4 +28,5 @@ button {
 
 button:hover {
     color:purple;
+    font-size: medium;
 }
