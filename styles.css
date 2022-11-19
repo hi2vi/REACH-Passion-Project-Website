@@ -19,3 +19,12 @@
     left:45%;
     top:0px;
 }
+
+button {
+    border: 0px solid white;
+    color: tan;
+}
+
+button:hover {
+    color:purple;
+}
