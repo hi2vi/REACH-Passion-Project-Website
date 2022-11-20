@@ -20,6 +20,12 @@ div, p, pre {
     top:0px;
 }
 
+#my-projects {
+    position:relative;
+    left:10%;
+    top:-300px;
+}
+
 button {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
