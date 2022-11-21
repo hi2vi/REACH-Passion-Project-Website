@@ -26,6 +26,7 @@ div, p, pre {
     top:-300px;
 }
 
+
 button {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 15px;
@@ -37,4 +38,11 @@ button {
 button:hover {
     color:purple;
     font-size: medium;
+}
+
+
+#fanfic-pic {
+    position:relative;
+    left:35%;
+    top: 100px;
 }
