@@ -2,6 +2,33 @@ div, p, pre {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+#menu-bar {
+    background-color:black;
+    width:auto;
+    height:calc(15px*10);
+}
+
+.menu-item {
+    background-color: black;
+    color:white;
+}
+
+.menu-item:hover {
+    color:tan;
+}
+
+#menu-1 {
+    position:relative;
+    left:60%;
+    top:15%;
+}
+
+#menu-2 {
+    position:relative;
+    top:15%;
+    left:25%;
+}
+
 .goBackToMainPage {
     position:absolute;
     top:0px;
