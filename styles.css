@@ -29,6 +29,12 @@ div, p, pre {
     left:25%;
 }
 
+#menu-3 {
+    position:relative;
+    top: 15%;
+    left:15%;
+}
+
 .goBackToMainPage {
     position:absolute;
     top:0px;
