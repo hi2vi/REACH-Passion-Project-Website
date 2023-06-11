@@ -3,25 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=dsevice-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computers</title>
-    <script src = "script.js"></script>
-    <link rel = "stylesheet" href = "https://shauryacomputers.tech/styles.css">
-    
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="menu-bar">
-        <button onclick = "goToLink('https://shauryacomputers.tech/copyright.html');" class="menu-item" id = "menu-1">Sources</button>
-        <button onclick = "goToLink('https://shauryacomputers.tech/personal.html');" class = "menu-item" id = "menu-2">About</button>
-        <button onclick = "goToLink('https://shauryacomputers.tech/kbrdshrtcts.html');" class = "menu-item" id = "menu-3">Keyboard Shortcuts</button>
+        <button onclick="goToLink('https://shauryacomputers.tech/copyright.html');" class="menu-item" id="menu-1">Sources</button>
+        <button onclick="goToLink('https://shauryacomputers.tech/personal.html');" class="menu-item" id="menu-2">About</button>
+        <button onclick="goToLink('https://shauryacomputers.tech/kbrdshrtcts.html');" class="menu-item" id="menu-3">Keyboard Shortcuts</button>
     </div>
-    <pre class = "text">
-
-
-
+    <pre class="text">
         Welcome to my site!
-        Did you know that my friend Vihaan also has a website for his Passion Project(check the <button onclick = "goToLink('https://shauryacomputers.tech/personal.html');">About</button>)
-        The link is <button onclick = "goToLink('https://vishnukamasamudram.wixsite.com/moneycraft');">Moneycraft</button>
+        Did you know that my friend Vihaan also has a website for his Passion Project (check the <button onclick="goToLink('https://shauryacomputers.tech/personal.html');">About</button>)
+        The link is <button onclick="goToLink('https://vishnukamasamudram.wixsite.com/moneycraft');">Moneycraft</button>
+
+        So, you wanted to learn more about computers?
+        Welp, you can't escape now!
+        I will show you through a labyrinth of computers, programming, and I'll also have to relearn HTML form elements again.
+        So are you ready? I don't care.
+        Just come.
+
+        Okay, so the first part of the computer, the obvious part is the display screen or monitor. The display/monitor is the part that
+        you are viewing this on. The monitor is the display on a desktop, while the display is the screen on a laptop.
+
+        The next part of the computer is the thing I'm typing this on. Can you guess what that is? Wrong, it's the keyboard.
+        Don't pretend like you don't have one. How did you get to this website if you don't have a keyboard?
+
+        Another part of the computer is called the base panel. It's a panel that contains the motherboard, the RAM, the cooling fan, hard drive, etc. 
+
+        So now, let me ask you a few questions (time to learn forms).
+
+        <form id="first-quiz">
+            <label for='first-question'>What is a keyboard?</label><br>
+            <input id="first-question"><br><br>
+            <label for='second-question'>What is a computer?</label>
+            <input id="second-question"><br><br>
+            <label for='third-question'>What is a base panel?</label>
+            <input id="third-question"><br><br>
+        </form>
+
+        <button onclick="submitForm()" id="submitbtn" style="visibility: hidden;">Submit</button>
     </pre>
+    <script>
+        function checkInputEmpty() {
+            let id1 = document.getElementById("first-question").value;
+            let id2 = document.getElementById("second-question").value;
+            let id3 = document.getElementById("third-question").value;
+
+            if (id1 === '' || id2 === '' || id3 === '') {
+                return false;
+            }
+
+            return true;
+        }
+
+        function submitForm() {
+            if (checkInputEmpty()) {
+                goToLink("https://shauryacomputers.tech/my-coding.html");
+            } else {
+                // Perform your desired action when the form is submitted and one or more inputs are empty
+                alert("Please fill in all the fields!");
+            }
+        }
+
+        // Call checkInputEmpty() function when the inputs lose focus
+        document.getElementById("first-question").addEventListener("blur", checkInputEmpty);
+        document.getElementById("second-question").addEventListener("blur", checkInputEmpty);
+        document.getElementById("third-question").addEventListener("blur", checkInputEmpty);
+    </script>
 </body>
 </html>
