@@ -45,6 +45,7 @@ div, p, pre {
     position:relative;
     left:45%;
     top:0px;
+    width:100%
 }
 
 #about {
@@ -78,6 +79,7 @@ button:hover {
     position:relative;
     left:35%;
     top: 100px;
+    width: 100%
 }
 
 #submitbtn {
