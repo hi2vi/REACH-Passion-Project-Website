@@ -4,7 +4,7 @@ div, p, pre {
 
 #menu-bar {
     background-color:black;
-    width:auto;
+    max-width:100px;
     height:150px;
 }
 
