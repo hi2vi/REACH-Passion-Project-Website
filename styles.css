@@ -11,7 +11,7 @@ div, p, pre {
 .menu-item {
     background-color: black;
     color:white;
-    font-size: 2vw;
+    font-size: 15px;
 }
 
 .menu-item:hover {
