@@ -1,0 +1,128 @@
+def displayBoard(board:list):
+    print(f'''\n\t{board[0]} | {board[1]} | {board[2]}
+        ---------
+        {board[3]} | {board[4]} | {board[5]}
+        ---------
+        {board[6]} | {board[7]} | {board[8]}\n''')
+    
+
+def hasPlayerWon(le:str, bo: list):  # Le and bo are short for letter and board
+    for i in range(3):
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in range(3,6):
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in range(6,9):
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in [0,3,6]:
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in [1,4,7]:
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in [2,5,8]:
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in [0,4,8]:
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    for i in [2,4,6]:
+        if bo[i] != le:
+            break
+    else:
+        return True
+    
+    return False
+
+
+def makeMove(board:list,letter:str,move:int):
+    board[move-1] = letter
+    return board
+
+def getMove(letter:str,board:list):
+    while True:
+        try:
+            move = int(input(f"{letter}'s turn: Please enter a number from 1-9: "))
+            if not(board[move-1] in list(range(1,10))):
+                print("That spot is taken. Please do another move.")
+                continue
+            return move
+        except ValueError:
+            print("Please enter a number: ")
+
+def playAgain():
+    return input("Would you like to play again? ").lower().startswith('y')
+
+def playGame():
+    while True:
+        board = [1,2,3,4,5,6,7,8,9]
+        playing = True
+        while playing:
+            displayBoard(board)
+            board = makeMove(board,'X',getMove('X',board))
+            if hasPlayerWon('X',board):
+                winner = 'X'
+                playing = False
+                continue
+            
+            letter_counter = 0
+            for i in board:
+                if i in [1,2,3,4,5,6,7,8,9]:
+                    letter_counter += 1
+            if letter_counter == 0:
+                winner = "DRAW"
+                playing = False
+                continue
+            
+            displayBoard(board)
+            board = AIMove(board)
+            print("AI: \n")
+
+            if hasPlayerWon('O',board):
+                winner = 'AI'
+                playing = False
+            
+            letter_counter = 0
+            for i in board:
+                if i in [1,2,3,4,5,6,7,8,9]:
+                    letter_counter += 1
+            if letter_counter == 0:
+                winner = "DRAW"
+                playing = False
+        
+        displayBoard(board)
+        if winner == "DRAW":
+            print("It is a draw!")
+        elif winner == "X":
+            print(f"Congratulations! You won!")
+        elif winner == "AI":
+            print("Sorry, the AI won.")
+        if not playAgain():
+            break
+
+
+if __name__ == "__main__":
+    playGame()

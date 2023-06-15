@@ -1,0 +1,287 @@
+#The board's indexes are
+#0 | 1 | 2
+#3 | 4 | 5
+#6 | 7 | 8
+
+def AIMove(bo):  #bo is short for board
+    
+    #Check if the AI can win
+    if bo[0] == 'O' and bo[6] == 'O':
+        if bo[3] == 4:
+            bo[3] = 'O'
+            return bo
+    
+    if bo[0] == 'O' and bo[3] == 'O':
+        if bo[6] == 7:
+            bo[6] = 'O'
+            return bo
+
+    if bo[3] == 'O' and bo[6] == 'O':
+        if bo[0] == 1:
+            bo[0] = 'O'
+            return bo
+    
+    if bo[1] == 'O' and bo[7] == 'O':
+        if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+        
+    if bo[1] == 'O' and bo[4] == 'O':
+        if bo[7] == 8:
+            bo[7] = 'O'
+            return bo
+    
+    if bo[4] == 'O' and bo[7] == 'O':
+        if bo[1] == 2:
+            bo[1] = 'O'
+            return bo
+    
+    if bo[2] == 'O' and bo[8] == 'O':
+        if bo[5] == 6:
+            bo[5] = 'O'
+            return bo
+    
+    if bo[2] == 'O' and bo[5] == 'O':
+        if bo[8] == 9:
+            bo[8] = 'O'
+            return bo
+
+    if bo[5] == 'O' and bo[8] == 'O':
+        if bo[2] == 3:
+            bo[2] = 'O'
+            return bo
+        
+    if bo[0] == 'O' and bo[2] == 'O':
+        if bo[1] == 2:
+            bo[1] = 'O'
+            return bo
+    
+    if bo[0] == 'O' and bo[1] == 'O':
+        if bo[2] == 7:
+            bo[2] = 'O'
+            return bo
+
+    if bo[1] == 'O' and bo[2] == 'O':
+        if bo[0] == 1:
+            bo[0] = 'O'
+            return bo
+    
+    if bo[3] == 'O' and bo[5] == 'O':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[3] == 'O' and bo[4] == 'O':
+         if bo[5] == 6:
+            bo[5] = 'O'
+            return bo      
+
+    if bo[4] == 'O' and bo[5] == 'O':
+         if bo[3] == 4:
+            bo[3] = 'O'
+            return bo 
+
+    if bo[6] == 'O' and bo[8] == 'O':
+         if bo[7] == 8:
+            bo[7] = 'O'
+            return bo
+
+    if bo[6] == 'O' and bo[7] == 'O':
+         if bo[8] == 9:
+            bo[8] = 'O'
+            return bo      
+
+    if bo[7] == 'O' and bo[8] == 'O':
+         if bo[6] == 7:
+            bo[6] = 'O'
+            return bo 
+    
+    if bo[0] == 'O' and bo[8] == 'O':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[0] == 'O' and bo[4] == 'O':
+         if bo[8] == 9:
+            bo[8] = 'O'
+            return bo      
+
+    if bo[4] == 'O' and bo[8] == 'O':
+         if bo[0] == 1:
+            bo[0] = 'O'
+            return bo 
+    
+    if bo[2] == 'O' and bo[6] == 'O':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[2] == 'O' and bo[4] == 'O':
+         if bo[6] == 7:
+            bo[6] = 'O'
+            return bo      
+
+    if bo[4] == 'O' and bo[6] == 'O':
+         if bo[2] == 3:
+            bo[2] = 'O'
+            return bo 
+
+         
+    #Check if the player can win and block
+    if bo[0] == 'X' and bo[6] == 'X':
+        if bo[3] == 4:
+            bo[3] = 'O'
+            return bo
+    
+    if bo[0] == 'X' and bo[3] == 'X':
+        if bo[6] == 7:
+            bo[6] = 'O'
+            return bo
+
+    if bo[3] == 'X' and bo[6] == 'X':
+        if bo[0] == 1:
+            bo[0] = 'O'
+            return bo
+    
+    if bo[1] == 'X' and bo[7] == 'X':
+        if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+        
+    if bo[1] == 'X' and bo[4] == 'X':
+        if bo[7] == 8:
+            bo[7] = 'O'
+            return bo
+    
+    if bo[4] == 'X' and bo[7] == 'X':
+        if bo[1] == 2:
+            bo[1] = 'O'
+            return bo
+    
+    if bo[2] == 'X' and bo[8] == 'X':
+        if bo[5] == 6:
+            bo[5] = 'O'
+            return bo
+    
+    if bo[2] == 'X' and bo[5] == 'X':
+        if bo[8] == 9:
+            bo[8] = 'O'
+            return bo
+
+    if bo[5] == 'X' and bo[8] == 'X':
+        if bo[2] == 3:
+            bo[2] = 'O'
+            return bo
+        
+    if bo[0] == 'X' and bo[2] == 'X':
+        if bo[1] == 2:
+            bo[1] = 'O'
+            return bo
+    
+    if bo[0] == 'X' and bo[1] == 'X':
+        if bo[2] == 7:
+            bo[2] = 'O'
+            return bo
+
+    if bo[1] == 'X' and bo[2] == 'X':
+        if bo[0] == 1:
+            bo[0] = 'O'
+            return bo
+    
+    if bo[3] == 'X' and bo[5] == 'X':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[3] == 'X' and bo[4] == 'X':
+         if bo[5] == 6:
+            bo[5] = 'O'
+            return bo      
+
+    if bo[4] == 'X' and bo[5] == 'X':
+         if bo[3] == 4:
+            bo[3] = 'O'
+            return bo 
+
+    if bo[6] == 'X' and bo[8] == 'X':
+         if bo[7] == 8:
+            bo[7] = 'O'
+            return bo
+
+    if bo[6] == 'X' and bo[7] == 'X':
+         if bo[8] == 9:
+            bo[8] = 'O'
+            return bo      
+
+    if bo[7] == 'X' and bo[8] == 'X':
+         if bo[6] == 7:
+            bo[6] = 'O'
+            return bo 
+    
+    if bo[0] == 'X' and bo[8] == 'X':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[0] == 'X' and bo[4] == 'X':
+         if bo[8] == 9:
+            bo[8] = 'O'
+            return bo      
+
+    if bo[4] == 'X' and bo[8] == 'X':
+         if bo[0] == 1:
+            bo[0] = 'O'
+            return bo 
+    
+    if bo[2] == 'X' and bo[6] == 'X':
+         if bo[4] == 5:
+            bo[4] = 'O'
+            return bo
+
+    if bo[2] == 'X' and bo[4] == 'X':
+         if bo[6] == 7:
+            bo[6] = 'O'
+            return bo      
+
+    if bo[4] == 'X' and bo[6] == 'X':
+         if bo[2] == 3:
+            bo[2] = 'O'
+            return bo
+    
+    #Just make moves otherwise
+    
+    if bo[4] == 5:
+        bo[4] ='O'
+        return bo
+
+    if bo[6] == 7:
+        bo[6] = 'O'
+        return bo
+    
+    if bo[8] == 9:
+        bo[8] = 'O'
+        return bo
+
+    if bo[2] == 3:
+        bo[2] = 'O'
+        return bo
+    
+    if bo[0] == 1:
+        bo[0] = 'O'
+        return bo
+    
+    if bo[1] == 2:
+        bo[1] = 'O'
+        return bo
+    
+    if bo[3] == 4:
+        bo[3] = 'O'
+        return bo
+    
+    if bo[7] == 8:
+        bo[7] = 'O'
+        return bo
+    
+    if bo[5] == 6:
+        bo[5] = 'O'
+        return bo
