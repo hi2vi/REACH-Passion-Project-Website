@@ -5,7 +5,7 @@ div, p, pre {
 #menu-bar {
     background-color:black;
     width:auto;
-    height:calc(15px*10);
+    height:150px;
 }
 
 .menu-item {
