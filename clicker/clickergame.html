@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+        <!-- When I want to add jQuery /\
+                                        |
+                                        |-->
+        <title> Clicky Clicker </title>
+    </head>
+    <body>
+        <p id = "bugs"><b>Minor bugs still being patched;</b>
+           <br>Doesn't save progress after refreshing/closing out tab;
+           <br>When resetting, the icons stay white(before pressing spacebar);
+           <br>Need to click spacebar button before you press spacebar;
+           <br><br><b>ALL BUGS ARE BEING PATCHED</b>
+           <br><br><b>GAME IS STILL IN DEVELOPMENT</b>
+        </p>
+        <b><h1> Clicky </h1></b>
+        <p>Your clix per click<h3><b><div id = "perclick">1</div></b></h3></p>
+        <button onclick = "increaseClickerCount();" id = "clicker">spacebar :)</button>
+        <br><b style = "color:rgb(57,255,20)"><h2 id = "counter">0</h2></b>
+        <br><br><button id = "reset" onclick = "resetClickCount();"> RESET PROGRESS </button>
+        <br><br><button class = "items1" id = "atom"onclick = "incrementObject(10,1);"><img src = "atom.png" width = "25" height = "25">Atom<br>+1/click<br>COSTS 10 CLIX</button>
+        <br><br><button class = "items1" id = "molecule" onclick = "incrementObject(50,5);"><img src = "molecule.png" width = "25" height = "25">Molecule<br>+5/click<br>COSTS 50 CLIX</button>
+        <br><br><button class = "items1" id = "cell" onclick = "incrementObject(100,10);"><img src = "cell.png" width = "25" height = "25">Cell<br>+10/click<br>COSTS 100 CLIX</button>
+        <br><br><button class = "items2" id = "organ" onclick = "incrementObject(1000,100);"><img src = "organ.png" width = "25" height = "25">Organ<br>+100/click<br>COSTS 1K CLIX</button>
+        <br><br><button class = "items2" id = "fox" onclick = "incrementObject(5000,1000);"><img src = "fox.png" width = "25" height = "25">Fox<br>+1K/click<br>COSTS 5K CLIX</button>
+        <br><br><button class = "items2" id = "sapling" onclick = "incrementObject(75000,12500);"><img src = "sapling.png" width = "25" height = "25">Sapling<br>+12.5K/click<br>COSTS 75K CLIX</button>
+        <br><br><button class = "items3" id = "sign" onclick = "incrementObject(175000,30000);"><img src = "sign.png" width = "25" height = "25">Sign<br>+30K/click<br>COSTS 175K CLIX</button>
+        <br><br><button class = "items3" id = "ladder" onclick = "incrementObject(500000,134000);"><img src = "ladder.png" width = "25" height = "25">Ladder<br>+134K/click<br>COSTS 500K CLIX</button>
+        <br><br><button class = "items3" id = "streetlamp" onclick = "incrementObject(10000000,500000);"><img src = "streetlamp.png" width = "25" height = "25">Streetlamp<br>+500K/click<br>COSTS 10M CLIX</button>
+        <br><br><button class = "items4" id = "fence" onclick = "incrementObject(25000000,10000000);"><img src = "fence.png" width = "25" height = "25">Fence<br>+10M/click<br>COSTS 25M CLIX</button>
+        <br><br><button class = "items4" id = "greatshark" onclick = "incrementObject(150000000,65513794);"><img src = "greatwhiteshark.png" width = "25" height = "25">Great White Shark<br>+65,513,794/click<br>COSTS 150M CLIX</button>
+        <br><br><button class = "items4" id = "megaladon" onclick = "incrementObject(200000000000,60000000000);"><img src = "megaladon.png" width = "25" height = "25">Megaladon<br>+60B/click<br>COSTS 200B CLIX</button>
+        <br><br><button class = "items5" id = "empirebuilding" onclick = "incrementObject(10000000000000,4000000000000);"><img src = "empirestate.png" width = "25" height = "25">Empire State Building<br>+4T/click<br>COSTS 10T CLIX</button>
+        <br><br><button class = "items5" id = "monkey" onclick = "incrementObject(500000000000000,50000000000000);"><img src = "monkey.png" width = "25" height = "25">Monkey<br>+50T/click<br>COSTS 500T CLIX</button>
+        <style>
+            #bugs {
+                position:absolute;
+                left:80%;
+                color:red;
+            }
+            h1 {
+              color:rgb(57,255,20);
+            }
+            
+            p {
+              color:rgb(57,255,20);
+            }
+            
+            body {
+                background-color:black;
+            }
+            
+            #reset {
+                position:absolute;
+                background-color:red;
+                top:85%;
+            }
+            
+            #perclick {
+                color:rgb(57,255,20);
+            }
+            
+            .items1 {
+                position:absolute;
+                background-color:gray;                
+            }
+            
+            .items1:hover {
+                background-color:gray;
+            }
+             
+            
+            .items2 {
+                position: absolute;
+                left:12%; 
+                background-color:gray;
+            }
+            
+            .items2:hover {
+                background-color:gray;
+            }
+            
+            .items3 {
+                position:absolute;
+                left:24%;
+                background-color:gray;
+            }
+            
+            .items3:hover {
+                background-color:gray;
+            }
+            
+            .items4 {
+                position:absolute;
+                left:36%;
+                background-color:gray;
+            }
+            
+            .items4:hover {
+                background-color:gray;
+            }
+            
+            .items5 {
+                position:absolute;
+                left:48%;
+                background-color:gray;
+            }
+            
+            .items5:hover {
+                background-color:gray;
+            }
+            
+            #atom {
+                top:44%;
+            }
+            
+            #molecule {
+                top:56%;
+            }
+                
+            #cell {
+                top:68%;
+            }
+            
+            #organ {
+                top: 44%;
+            }
+            
+            #fox {
+                top:56%;
+            }
+            
+            #sapling {
+                top:68%;
+            }
+            
+            #sign {
+                top:44%;
+                left:24.5%;
+            }
+            
+            #ladder {
+                top:56%;
+                left:25%;
+            }
+            
+            #streetlamp {
+                left:25%;
+                top:68%;
+            }
+            
+            #fence {
+                top:44%;
+                left:38%;
+            }
+            
+            #greatshark {
+                top:56%;
+                left:39%;
+            }
+            
+            
+            #megaladon {
+                top:68%;
+                left:40%;
+            }
+            
+            #empirebuilding {
+                top:44%;
+                left:52%;
+            }
+            
+            #monkey {
+                top:56%;
+                left:53%;
+            }
+                
+        </style>
+        <script>
+            increment = 1;
+            
+            function changeBackgroundCol(clix) {
+                if (clix >= 10) {
+                    document.getElementById('atom').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('atom').style.backgroundColor = "gray";
+                }
+                if (clix >= 50) {
+                    document.getElementById('molecule').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('molecule').style.backgroundColor = "gray";
+                }
+                if (clix >= 100) {
+                    document.getElementById('cell').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('cell').style.backgroundColor = "gray";
+                }
+                if (clix >= 1000) {
+                    document.getElementById('organ').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('organ').style.backgroundColor = "gray";
+                }
+                if (clix >= 5000) {
+                    document.getElementById('fox').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('fox').style.backgroundColor = "gray";
+                }
+                if (clix >= 75000) {
+                    document.getElementById('sapling').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('sapling').style.backgroundColor = "gray";
+                }
+                if (clix >= 175000) {
+                    document.getElementById('sign').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('sign').style.backgroundColor = "gray";
+                }
+                if (clix >= 500000) {
+                    document.getElementById('ladder').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('ladder').style.backgroundColor = "gray";
+                }
+                if (clix >= 10000000) {
+                    document.getElementById('streetlamp').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('streetlamp').style.backgroundColor = "gray";
+                }
+                if (clix >= 25000000) {
+                    document.getElementById('fence').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('fence').style.backgroundColor = "gray";
+                }
+                if (clix >= 150000000) {
+                    document.getElementById('greatshark').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('greatshark').style.backgroundColor = "gray";
+                }
+                if (clix >= 200000000000) {
+                    document.getElementById('megaladon').style.backgroundColor = "white";
+                }                
+                else {
+                    document.getElementById('megaladon').style.backgroundColor = "gray";
+                }
+                if (clix >= 10000000000000) {
+                    document.getElementById('empirebuilding').style.backgroundColor = "white";
+                }
+                else {
+                    document.getElementById('empirebuilding').style.backgroundColor = "gray";
+                }
+                if (clix >= 500000000000000) {
+                    document.getElementById('monkey').style.backgroundColor = "white";
+                }
+                else {
+                    document.getElementById('monkey').style.backgroundColor = "gray";
+                }
+            }
+            
+            function commafy(number) {
+                number = parseString(number);
+                for 
+            }
+            
+            function setIncrement(increm) {
+                document.getElementById("perclick").innerHTML = increm;
+                increment = increm;
+                saveData();
+            }
+            
+            function incrementObject(clixneeded,increm) {
+                current = parseInt(document.getElementById('counter').innerHTML);
+                if (current >= clixneeded) { 
+                    new_current = current - clixneeded;
+                    document.getElementById('counter').innerHTML = new_current;
+                    changeBackgroundCol(new_current);
+                    setIncrement(increment + increm);
+                }
+                else {
+                    alert("You don't have enough clix! You need "+clixneeded+" clix!");
+                }
+            }
+            
+            function increaseClickerCount() {
+                current = parseInt(document.getElementById('counter').innerHTML);
+                new_current = current + increment;
+                document.getElementById('counter').innerHTML = new_current;
+                changeBackgroundCol(new_current);
+            }
+            
+            function resetClickCount() {
+                if (window.confirm("Are you sure you want to reset your current progress?") == true) {
+                    document.getElementById('counter').innerHTML = "0";
+                    setIncrement(1);
+                    changeBackgroundCol(0);
+                }
+            }
+        </script>
+</html>
