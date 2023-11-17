@@ -34,6 +34,7 @@
         <br><br><button class = "items4" id = "megaladon" onclick = "incrementObject(200000000000,60000000000);"><img src = "megaladon.png" width = "25" height = "25">Megaladon<br>+60B/click<br>COSTS 200B CLIX</button>
         <br><br><button class = "items5" id = "empirebuilding" onclick = "incrementObject(10000000000000,4000000000000);"><img src = "empirestate.png" width = "25" height = "25">Empire State Building<br>+4T/click<br>COSTS 10T CLIX</button>
         <br><br><button class = "items5" id = "monkey" onclick = "incrementObject(500000000000000,50000000000000);"><img src = "monkey.png" width = "25" height = "25">Monkey<br>+50T/click<br>COSTS 500T CLIX</button>
+        <br><br><button class = "items5" id = "godzilla" onclick = "incrementObject(10000000000000000,450000000000000);"><img src = "godzilla.png" width = "25" height = "25">Godzilla<br>+450T/click<br>COSTS 10QA CLIX</button>
         <style>
             #bugs {
                 position:absolute;
@@ -176,9 +177,15 @@
                 top:56%;
                 left:53%;
             }
+
+            #godzilla {
+                top:68%;
+                left:53%;
+            }
                 
         </style>
         <script>
+            robux = 0;
             increment = 1;
             
             function changeBackgroundCol(clix) {
@@ -266,29 +273,56 @@
                 else {
                     document.getElementById('monkey').style.backgroundColor = "gray";
                 }
+                if (clix >= 10000000000000000) {
+                    document.getElementById('godzilla').style.backgroundColor = "white";
+                }
+                else {
+                    document.getElementById('godzilla').style.backgroundColor = "gray";
+                }                   
             }
+
+            function abbreviate(number,idofthing) {
+                if (number >= 1000000000000000000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000000000000000000).toFixed(2) + "QI";
+                }
+                else if (number >= 1000000000000000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000000000000000).toFixed(2) + "QA";
+                }
+                else if (number >= 1000000000000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000000000000).toFixed(2) + "T";
+                }
+                else if (number >= 1000000000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000000000).toFixed(2) + "B";
+                }
+                else if (number >= 1000000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000000).toFixed(2) + "M";
+                }
+                else if (robux >= 1000) {
+                    document.getElementById(idofthing).innerHTML = (number/1000).toFixed(2) + "K";
+                }
+                else {
+                    document.getElementById(idofthing).innerHTML = number;
+                }
+            }              
             
             function setIncrement(increm) {
-                document.getElementById("perclick").innerHTML = increm;
+                abbreviate(increm,"perclick");
                 increment = increm;
-                saveData();
             }
             
             function incrementObject(clixneeded,increm) {
-                current = parseInt(document.getElementById('counter').innerHTML);
-                if (current >= clixneeded) { 
-                    new_current = current - clixneeded;
-                    document.getElementById('counter').innerHTML = new_current;
-                    changeBackgroundCol(new_current);
+                if (robux >= clixneeded) { 
+                    robux -= clixneeded;
+                    abbreviate(robux,"counter");
+                    changeBackgroundCol(robux);
                     setIncrement(increment + increm);
                 }
             }
             
             function increaseClickerCount() {
-                current = parseInt(document.getElementById('counter').innerHTML);
-                new_current = current + increment;
-                document.getElementById('counter').innerHTML = new_current;
-                changeBackgroundCol(new_current);
+                robux += increment;
+                abbreviate(robux,"counter");
+                changeBackgroundCol(robux);
             }
             
             function resetClickCount() {
